@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+<head>
+  <title>{:C('LINE_NAME')}</title>
+  <css file="__CSS__style.css" />
+  <css file="__CSS__swiper.min.css" />
+  <css file="__CSS__font/css/font-awesome.css" />
+  <css file="__STATIC__bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body class="bg_money">
+<div class="swiper-container flex">
+   <div class="wrapper">
+         <form class="login-form" data-action="{:U('Account/login_handle')}">
+		 <input type="hidden" value="{:I('url')}" name="url"/>
+		       <div class="top_1">
+			     <h4>用户名:</h4><input class="form-control" type="text" name="user" value="">
+			   </div>
+		       <div class="top_2">
+			     <h4>密&nbsp;&nbsp;&nbsp;码:</h4><input class="form-control" type="password" name="pass" value="">
+			   </div>
+			   <div class="top_3">
+		       <button class="btn btn-primary login-submit" type="button">登入</button>
+			   </div>
+		 </form>
+   </div>
+</div>
+<script type="text/javascript">
+            var lqc  = "v={:C('SEAJSTIMESTAMP')}";
+  </script>
+        <js file="__STATIC__jquery.js" />
+		<js file="__STATIC__bootstrap/dist/js/bootstrap.min.js" />
+        <js file="__STATIC__Seajs/2.2.3/sea.js" />
+        <js file="__JS__sea.config.js?v={:C('SEAJSTIMESTAMP')}" />
+    <script type="text/javascript">seajs.use(["script","login"]);</script>
+	<script>
+	  $(document).ready(function(){
+	       
+	  });
+	</script>
+</body>
+</html>

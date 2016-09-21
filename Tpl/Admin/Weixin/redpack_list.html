@@ -1,0 +1,57 @@
+  <!doctype html>
+  <html>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <head>
+    <title>{:C('LINE_NAME')}</title>
+    <css file="__CSS__style.css" />
+    <css file="__CSS__swiper.min.css" />
+    <css file="__CSS__font/css/font-awesome.css" />
+    <css file="__STATIC__bootstrap/dist/css/bootstrap.min.css" />
+  </head>
+  <body>
+  <div class="swiper-container flex">
+    <!--  -->
+    <div class="white flex">
+            <a href="javascript:window.history.back(-1);" class="back-btn back-url"></a>
+    </div>
+    <div class="redpack flex" id="redpack">
+         <volist name="data.list" id="v">
+         <ul>
+           <li>
+             {$v.openid}<br/>
+             <p></p>
+             {$v.nickname}&nbsp;{$v.subscribe_time|format_date}
+             <div class="status">{$v.send_status}</div>
+           </li>
+         </ul>
+         </volist>
+    </div>
+    <div class="pagelist flex">{$page}</div>
+    <!--  -->
+   <!--  <div class="warpper">
+      <div class="load-more load-more-openid-list1"></div>
+    </div> -->
+  </div>
+  {:W('Public/footer')}
+     <script type="text/javascript">
+              var lqc  = "v={:C('SEAJSTIMESTAMP')}";
+              var load_action = '{:U("Weixin/ajax_load")}';
+    </script>
+          <js file="__STATIC__iscroll.js" />
+          <js file="__STATIC__pullToRefresh.js" />
+          <js file="__STATIC__colorful.js" />
+          <js file="__STATIC__jquery.js" />
+          <js file="__STATIC__bootstrap/dist/js/bootstrap.min.js" />
+          <js file="__STATIC__Seajs/2.2.3/sea.js" />
+          <js file="__JS__sea.config.js?v={:C('SEAJSTIMESTAMP')}" />
+      <script type="text/javascript">seajs.use(["script","load"]);</script>
+    <script>
+      $(document).ready(function(){
+  
+      });
+    </script>
+  </body>
+  </html>

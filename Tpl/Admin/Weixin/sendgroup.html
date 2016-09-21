@@ -1,0 +1,54 @@
+  <!doctype html>
+  <html>
+  <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+  <head>
+    <title>{:C('LINE_NAME')}</title>
+    <css file="__CSS__style.css" />
+    <css file="__CSS__swiper.min.css" />
+    <css file="__CSS__font/css/font-awesome.css" />
+    <css file="__STATIC__bootstrap/dist/css/bootstrap.min.css" />
+  </head>
+  <body>
+  <div class="swiper-container flex">
+     <!--  -->
+    <div class="white flex">
+            <a href="javascript:window.history.back(-1);" class="back-btn back-url"></a>
+    </div>
+    <!--  -->
+     <div class="send flex">
+          <div class="send_top_1">
+            <input type="text" name="send_search" class="send_seach" value="" placeholder="请输入昵称" />
+            <a href="javascript:;" data-action="{:U('Weixin/sendgroup_submit')}" class="btn btn-info btn-send-seach" >查找</a>
+          </div>
+          <div class="send_top_2">
+            <form class="" action="" method="">
+            <ul>
+               <volist name="resault" id='v'>
+                 <li>
+                  <input type="checkbox" name="ids" class="" value="{$v.openid}">{$v.nickname}
+                </li>
+                <div style="border-bottom:1px dashed #ccc"></div>
+               </volist>
+            </ul>
+          </div>
+     </div>
+  </div>
+  {:W('Public/sendpack')}
+</form>
+     <script type="text/javascript">
+              var lqc  = "v={:C('SEAJSTIMESTAMP')}";
+              // var load_action = '{:U("User/ajax_load")}';
+    </script>
+          <js file="__STATIC__jquery.js" />
+      <js file="__STATIC__bootstrap/dist/js/bootstrap.min.js" />
+          <js file="__STATIC__Seajs/2.2.3/sea.js" />
+          <js file="__JS__sea.config.js?v={:C('SEAJSTIMESTAMP')}" />
+      <script type="text/javascript">seajs.use(["script"]);</script>
+    <script>
+      $(document).ready(function(){
+       
+         
+      });
+    </script>
+  </body>
+  </html>

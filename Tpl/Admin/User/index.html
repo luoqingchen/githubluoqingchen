@@ -1,0 +1,98 @@
+  <!doctype html>
+  <html>
+  <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+  <head>
+    <title>{:C('LINE_NAME')}</title>
+    <css file="__CSS__style.css" />
+    <css file="__CSS__swiper.min.css" />
+    <css file="__CSS__font/css/font-awesome.css" />
+    <css file="__STATIC__bootstrap/dist/css/bootstrap.min.css" />
+  </head>
+  <body>
+  <div class="swiper-container flex">
+     <div class="header flex">
+      <a href="{:U('/User')}" class="logo"></a>
+      <div class="center">
+        <h4><a href="{:U('/User')}"><span class="fa fa-search"></span></a></h4>
+        <input class="header-search" type="text" value="" placeholder="Search for....">
+      </div>
+      <div class="right">
+        <volist name="uname" id='v'>
+        {$v.name}
+        </volist>
+        <a href="{:U('Account/logout')}">退出</a>
+      </div> 
+     </div>
+  	<!---->
+    <div class="swiper-container flex">
+      <div class="mesmarth">
+         <ul class="message">
+            <li><a href="javascript:;"><img src="__IMG__1.jpg" width="100%" height="180"/></a></li>
+            <li><a href="javascript:;"><img src="__IMG__2.jpg" width="100%" height="180"/></a></li>
+            <li><a href="javascript:;"><img src="__IMG__3.jpg" width="100%" height="180"/></a></li>
+            <li><a href="javascript:;"><img src="__IMG__4.jpg" width="100%" height="180"/></a></li>
+            <li><a href="javascript:;"><img src="__IMG__5.jpg" width="100%" height="180"/></a></li>
+            <li><a href="javascript:;"><img src="__IMG__6.jpg" width="100%" height="180"/></a></li>
+            <li><a href="javascript:;"><img src="__IMG__7.jpg" width="100%" height="180"/></a></li>
+         </ul>
+         <div class="marth">
+         <ul class="math">
+           <li></li>
+           <li></li>
+           <li></li>
+           <li></li>
+           <li></li>
+           <li></li>
+           <li></li>
+         </ul>
+         </div> 
+  	</div>
+  </div>
+  <!--  -->
+    <!--  -->
+    <div class="openid-list" id="openid-list">
+      <volist name="post" id="vv">
+       <a class="" href="{:U('User/view', array('id' => $vv['id']))}">
+       <p class="title">
+        <if condition="$vv['sex'] eq 1">
+              &nbsp;<span class="fa fa-mars"></span>
+          <else />
+              &nbsp;<span class="fa fa-venus"></span>
+        </if>
+             {$vv.openid}
+        </p>
+        <img src="{$vv.headimgurl}" class="img-circle"/>
+        <div class="info">
+                    <span class="nickname">
+                      <span class="fa fa-user"></span>{$vv.nickname}
+                    </span>          
+                    <span class="subscribe_time">
+                     <span class="fa fa-table"></span> {$vv.subscribe_time|format_date}
+                    </span>   
+                  </div>
+       </a>
+       <div style="border-bottom:1px solid  #C1CDC1;width:600px;margin-top:10px"></div>
+     </volist>
+    </div>
+    <div class="wrapper">
+      <div class="load-more load-more-openid-list1"></div>
+    </div>
+    <!--  -->
+  </div>
+  {:W('Public/footer')}
+     <script type="text/javascript">
+              var lqc  = "v={:C('SEAJSTIMESTAMP')}";
+              var load_action = '{:U("User/ajax_load")}';
+    </script>
+          <js file="__STATIC__jquery.js" />
+  		<js file="__STATIC__bootstrap/dist/js/bootstrap.min.js" />
+          <js file="__STATIC__Seajs/2.2.3/sea.js" />
+          <js file="__JS__sea.config.js?v={:C('SEAJSTIMESTAMP')}" />
+      <script type="text/javascript">seajs.use(["script","load"]);</script>
+  	<script>
+  	  $(document).ready(function(){
+  	       
+  	  });
+  	</script>
+  </body>
+  </html>

@@ -1,0 +1,48 @@
+  <!doctype html>
+  <html>
+  <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+  <head>
+    <title>{:C('LINE_NAME')}</title>
+    <css file="__CSS__style.css" />
+    <css file="__CSS__swiper.min.css" />
+    <css file="__CSS__font/css/font-awesome.css" />
+    <css file="__STATIC__bootstrap/dist/css/bootstrap.min.css" />
+  </head>
+  <body>
+  <div class="swiper-container flex">
+<!--  -->
+    <div class="white flex">
+            <a href="javascript:window.history.back(-1);" class="back-btn back-url"></a>
+    </div>
+    <div class="info flex">
+        <div class="red_pag">
+          <h4>
+            <a href="{:U('User/send_pack')}">现金红包文案<label>&rsaquo;</label></a>
+          </h4>
+        </div>
+        <div class="red_pag_2">
+          <h4>
+             <a href="{:U('User/group_pack')}">裂变红包文案<label>&rsaquo;</label></a>
+          </h4>
+        </div>
+    </div>
+      <!--  -->
+  </div>
+  {:W('Public/footer')}
+     <script type="text/javascript">
+              var lqc  = "v={:C('SEAJSTIMESTAMP')}";
+              var load_action = '{:U("User/ajax_load")}';
+    </script>
+          <js file="__STATIC__jquery.js" />
+      <js file="__STATIC__bootstrap/dist/js/bootstrap.min.js" />
+          <js file="__STATIC__Seajs/2.2.3/sea.js" />
+          <js file="__JS__sea.config.js?v={:C('SEAJSTIMESTAMP')}" />
+      <script type="text/javascript">seajs.use(["script"]);</script>
+    <script>
+      $(document).ready(function(){
+       
+         
+      });
+    </script>
+  </body>
+  </html>

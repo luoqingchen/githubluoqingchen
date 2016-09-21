@@ -1,0 +1,68 @@
+ <!doctype html>
+  <html>
+  <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+  <head>
+    <title>{:C('LINE_NAME')}</title>
+    <css file="__CSS__style.css" />
+    <css file="__CSS__swiper.min.css" />
+    <css file="__CSS__font/css/font-awesome.css" />
+    <css file="__STATIC__bootstrap/dist/css/bootstrap.min.css" />
+  </head>
+  <body>
+  <div class="swiper-container flex">
+    <!--  -->
+    <div class="white flex">
+            <a href="javascript:window.history.back(-1);" class="back-btn back-url"></a>
+    </div>
+    <!--  -->
+    <div class="user_send_pack flex">
+         <fieldset>
+          <div class="control-group">
+            <label class="control-label">商户名称:</label>
+            <div class="controls">
+              <input type="text" class="form-control" name="send_name" value="{$Think.config.SEND_NAME}" disabled />
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label">红包祝福语:</label>
+            <div class="controls">
+              <input type="text" class="form-control" name="wishing" value="{$Think.config.WISHING}" disabled/>
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label">活动名称:</label>
+            <div class="controls">
+              <input type="text" class="form-control" name="act_name" value="{$Think.config.ACT_NAME}" disabled/>
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label">备注:</label>
+            <div class="controls">
+              <input type="text" class="form-control" name="remark" value="{$Think.config.REMARK}" disabled/>
+            </div>
+          </div>
+         <!--  <div class="form-actions">
+            <button type="submit" class="btn btn-primary btn_submit disabled">更新</button>
+          </div> -->
+        </fieldset>
+             
+    </div>
+  </div>
+  {:W('Public/footer')}
+     <script type="text/javascript">
+              var lqc  = "v={:C('SEAJSTIMESTAMP')}";
+              var load_action = '{:U("User/ajax_load")}';
+    </script>
+          <js file="__STATIC__jquery.js" />
+      <js file="__STATIC__bootstrap/dist/js/bootstrap.min.js" />
+          <js file="__STATIC__Seajs/2.2.3/sea.js" />
+          <js file="__JS__sea.config.js?v={:C('SEAJSTIMESTAMP')}" />
+      <script type="text/javascript">seajs.use(["script"]);</script>
+    <script>
+      $(document).ready(function(){
+       
+         
+      });
+    </script>
+  </body>
+  </html>

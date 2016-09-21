@@ -1,0 +1,30 @@
+<css file="__CSS__style.css" />
+    <css file="__CSS__swiper.min.css" />
+    <css file="__CSS__font/css/font-awesome.css" />
+    <css file="__STATIC__bootstrap/dist/css/bootstrap.min.css" />
+<div class="moneyfooter flex">
+	<select name="type" class="fahongboa">
+          <option value="1">随机红包</option>
+          <option value="2">固定红包</option>
+          <option value="3">指定金额红包</option> 
+	</select>
+	<a class="btn btn-danger">计算金额</a>
+	<br>
+	<input type="text" name="total_number" class="number" placeholder="总金额" >
+	<a  href="javascript:;" data-action="{:U('Weixin/sendredpack')}" class="btn btn-primary btn-ajax">发红包</a>
+</div>
+ <script type="text/javascript">
+              var lqc  = "v={:C('SEAJSTIMESTAMP')}";
+              var load_action = '{:U("User/ajax_load")}';
+    </script>
+          <js file="__STATIC__jquery.js" />
+      <js file="__STATIC__bootstrap/dist/js/bootstrap.min.js" />
+          <js file="__STATIC__Seajs/2.2.3/sea.js" />
+          <js file="__JS__sea.config.js?v={:C('SEAJSTIMESTAMP')}" />
+      <script type="text/javascript">seajs.use(["script"]);</script>
+    <script>
+      $(document).ready(function(){
+       
+         
+      });
+    </script>

@@ -1,0 +1,54 @@
+  <!doctype html>
+  <html>
+  <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+  <head>
+    <title>{:C('LINE_NAME')}</title>
+    <css file="__CSS__style.css" />
+    <css file="__CSS__swiper.min.css" />
+    <css file="__CSS__font/css/font-awesome.css" />
+    <css file="__STATIC__bootstrap/dist/css/bootstrap.min.css" />
+  </head>
+  <body>
+  <div class="swiper-container flex">
+    <!--  -->
+    <div class="white flex">
+            <a href="javascript:window.history.back(-1);" class="back-btn back-url"></a>
+    </div>
+    <div class="group flex">
+      <!--  -->
+      <div class="all_money">
+        <div class="m_top_1">
+          <a href="{:U('Weixin/group_view')}">
+        <div class="money"></div>
+         <h3>现金红包</h3>
+         </a>
+        </div>
+        <div class="m_top_2">
+          <a href="{:U('Weixin/sendgroup')}">
+           <h3>裂变红包</h3>
+           <div class="money_2"></div>
+         </a>
+        </div>
+      </div>
+      <span class="m-message"><---红包类型说明---></span>
+    </div>
+    <!--  -->
+  </div>
+  {:W('Public/footer')}
+     <script type="text/javascript">
+              var lqc  = "v={:C('SEAJSTIMESTAMP')}";
+              var load_action = '{:U("User/ajax_load")}';
+    </script>
+          <js file="__STATIC__jquery.js" />
+      <js file="__STATIC__bootstrap/dist/js/bootstrap.min.js" />
+          <js file="__STATIC__Seajs/2.2.3/sea.js" />
+          <js file="__JS__sea.config.js?v={:C('SEAJSTIMESTAMP')}" />
+      <script type="text/javascript">seajs.use(["script"]);</script>
+    <script>
+      $(document).ready(function(){
+       
+         
+      });
+    </script>
+  </body>
+  </html>

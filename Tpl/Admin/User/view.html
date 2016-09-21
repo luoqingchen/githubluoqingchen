@@ -1,0 +1,89 @@
+  <!doctype html>
+  <html>
+  <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+  <head>
+    <title>{:C('LINE_NAME')}</title>
+    <css file="__CSS__style.css" />
+    <css file="__CSS__swiper.min.css" />
+    <css file="__CSS__font/css/font-awesome.css" />
+    <css file="__STATIC__bootstrap/dist/css/bootstrap.min.css" />
+  </head>
+  <body>
+  <div class="swiper-container flex">
+    <!--  -->
+    <div class="white flex">
+            <a href="javascript:window.history.back(-1);" class="back-btn back-url"></a>
+    </div>
+    <!--  -->
+    <div class="user_view flex">
+      <volist name="content" id="v">
+        <div class="u_top">
+           <div class="u_top_1">
+             <img src="{$v.headimgurl}" class="img-circle" />
+             <div class="u_top_1_right">
+             <label>昵称:{$v.nickname}</label><br/>
+             <label>性别:
+             <if condition="$v['sex'] eq 1">
+                  男
+              <else />
+                  女
+            </if>
+             </label><br/>
+             <label>地区:
+              <if condition="($v['country'] and $v['province'] and $v['city'])">
+              {$v.country}{$v.province}{$v.city}
+              <else />
+                -:-:-
+              </if>
+            </label>
+            </div>
+          </div>
+          <!--  -->
+          <div class="u_top_2">
+              <label>openID:&nbsp;{$v.openid}</label>
+              <label>关注时间:&nbsp;{$v.subscribe_time|date="Y-m-d H:i:s",###}</label>
+          </div>
+        </div>
+      </volist>
+      <div class="u_bottom">
+         <div class="u_bottom_top">
+          <button class="btn btn-success btn-add">添加到分组</button>
+          <button class="btn btn-warning">修改分组</button>
+          <button class="btn btn-info">删除分组</button>
+          <button class="btn btn-danger">删除用户</button>
+          </div>
+          <span>所属分组为:</span>
+        </div>
+        </div>
+    <!--  -->
+    <div class="user_view_bottom flex">
+      <div class="u_b_top_t"></div>
+      <div class="u_b_top">
+        &nbsp;&nbsp;&nbsp;相关内容
+      </div>
+      <ul>
+      <volist name="us" id="vv">
+        <li><a href="{:U('User/view', array('id' => $vv['id']))}">{$vv.openid}</a></li>
+      </volist>
+     </ul>
+    </div>
+
+  </div>
+  {:W('Public/footer')}
+     <script type="text/javascript">
+              var lqc  = "v={:C('SEAJSTIMESTAMP')}";
+              var load_action = '{:U("User/ajax_load")}';
+    </script>
+          <js file="__STATIC__jquery.js" />
+  		<js file="__STATIC__bootstrap/dist/js/bootstrap.min.js" />
+          <js file="__STATIC__Seajs/2.2.3/sea.js" />
+          <js file="__JS__sea.config.js?v={:C('SEAJSTIMESTAMP')}" />
+      <script type="text/javascript">seajs.use(["script","load"]);</script>
+  	<script>
+  	  $(document).ready(function(){
+       
+  	     
+  	  });
+  	</script>
+  </body>
+  </html>
